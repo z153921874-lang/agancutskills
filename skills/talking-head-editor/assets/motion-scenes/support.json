@@ -1,0 +1,97 @@
+{
+  "title": "让照护，获得更多支持",
+  "eyebrow": "03 / 让不同角色进入同一张关系图",
+  "duration": 8,
+  "theme": "dark",
+  "nodes": [
+    {
+      "id": "need",
+      "label": "照护需求",
+      "detail": "由不同支持共同回应",
+      "icon": "person",
+      "x": 490,
+      "y": 190,
+      "w": 300,
+      "h": 190,
+      "at": 0.1
+    },
+    {
+      "id": "family",
+      "label": "家庭",
+      "detail": "亲情与日常支持",
+      "icon": "home",
+      "x": 50,
+      "y": 440,
+      "w": 330,
+      "h": 190,
+      "at": 1.1
+    },
+    {
+      "id": "community",
+      "label": "社区",
+      "detail": "身边的服务支持",
+      "icon": "home",
+      "x": 475,
+      "y": 440,
+      "w": 330,
+      "h": 190,
+      "at": 2.1
+    },
+    {
+      "id": "professional",
+      "label": "专业照护",
+      "detail": "专业服务与机构支持",
+      "icon": "home",
+      "x": 900,
+      "y": 440,
+      "w": 330,
+      "h": 190,
+      "at": 3.1
+    }
+  ],
+  "edges": [
+    {
+      "from": "family",
+      "to": "need",
+      "start": [
+        215,
+        428
+      ],
+      "end": [
+        477,
+        342
+      ],
+      "label": "衔接",
+      "at": 4.1
+    },
+    {
+      "from": "community",
+      "to": "need",
+      "start": [
+        640,
+        428
+      ],
+      "end": [
+        640,
+        392
+      ],
+      "label": "",
+      "at": 4.7
+    },
+    {
+      "from": "professional",
+      "to": "need",
+      "start": [
+        1065,
+        428
+      ],
+      "end": [
+        803,
+        342
+      ],
+      "label": "衔接",
+      "at": 5.3
+    }
+  ],
+  "footer": "支持关系示意，不代表各地具体服务供给"
+}

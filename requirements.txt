@@ -1,0 +1,4 @@
+# Base rendering and photographic compositing. ASR/matting dependencies are optional.
+Pillow>=10
+numpy>=1.24
+imageio-ffmpeg>=0.5

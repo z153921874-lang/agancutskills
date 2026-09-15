@@ -1,0 +1,4 @@
+interface:
+  display_name: "口播语义精剪"
+  short_description: "按台词重点与情绪剪口播，输出基础成片并明确高级效果的实现条件"
+  default_prompt: "使用 $talking-head-editor 分析我的原始口播，按语义和情绪完成可执行的剪辑，并说明未实现的效果。"
