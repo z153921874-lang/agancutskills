@@ -4,7 +4,7 @@
 
 适合知识讲解、生活口播、商品介绍和混合讲述视频。由 AI 助手根据原话规划剪口、关键词、素材与视觉关系，再调用本地工具完成合成。
 
-[下载 v2.8](https://github.com/z153921874-lang/agancutskills/archive/refs/tags/v2.8.0.zip) · [技能入口](skills/talking-head-editor/SKILL.md) · [功能与边界](skills/talking-head-editor/references/capabilities.md) · [反馈与需求](https://github.com/z153921874-lang/agancutskills/issues)
+[下载 v3.0.2](https://github.com/z153921874-lang/agancutskills/archive/refs/tags/v3.0.2.zip) · [技能入口](skills/talking-head-editor/SKILL.md) · [功能与边界](skills/talking-head-editor/references/capabilities.md) · [反馈与需求](https://github.com/z153921874-lang/agancutskills/issues)
 
 ## 能做什么
 
@@ -16,7 +16,11 @@
 
 这是一套给 AI 助手使用的技能与本地工具，不是双击即用的独立软件。没有承诺任意素材一键生成成熟成片。
 
-## v2.8 的重点
+## v3.0.2 的重点
+
+在真实口播同段比较后，补充三项制作方法：让抽象概念呈现可见状态变化；让同一素材从真人旁连续进入解释画面；让退居次要位置的比较对象仍可辨认。新增运动途中标题碰撞、字幕交接和对象身份检查。具体用法见[状态变化与连续衔接](skills/talking-head-editor/references/state-continuity.md)。这是规则与项目验证的更新，没有新增通用扫描、自动避让或真实动作生成接口。
+
+本次同时发布此前本地完成的整片计划、关键词映射、第二参考学习、美术规则和二维场景镜头工具。延续 v2.8 的大主体、少量强关键词及真人呼吸感；v3.0 的28.13秒示范仍仅作为技术样例，不能因为工具检查通过就将其视为审美提升。
 
 从“每句话配一张图”，进一步走向“先建立对象，再显示关系，最后聚焦重点”。
 
@@ -28,7 +32,7 @@
 | 后段只重复播放旧素材 | 带回旧对象，参与新的状态比较 |
 | 效果越多越看不懂 | 先判断视觉任务，再选择效果 |
 
-新增模块通过 14 项行为检查，并用真实口播制作了 17.16 秒代表段进行选帧检查。范围与未验证项见[验证记录](skills/talking-head-editor/references/validation.md)。用户原片、参考视频和第三方素材不随仓库分发。
+最新项目候选为38.04秒、720×1280、25fps，完成全片解码、29个时点抽查及新旧音轨一致性检查；尚未完成新增的完整主观视听验收。各代工具与项目验证范围见[验证记录](skills/talking-head-editor/references/validation.md)。用户原片、参考视频和第三方素材不随仓库分发。
 
 ## 安装与使用
 
@@ -65,7 +69,7 @@ python skills/talking-head-editor/scripts/render.py --plan examples/plan.json --
 
 ## 当前边界
 
-- 基础渲染器为 v2.7，skill 制作规则与独立合成工具为 v2.8。
+- Skill 版本为 v3.0.2，基础渲染器仍为 v2.7；独立合成模块与制作规则不等于新增基础 JSON 字段。
 - 识别、跟踪和人物抠像是可选能力，需要模型与环境；复杂遮挡和发丝不保证稳定。
 - AI 图片加二维推拉不等于生成式视频；没有自动真 3D 或恢复参考片工程的能力。
 - 选帧和音量检查不等于完整审片与试听。仍需校对原话、素材关系、字幕和声音。
