@@ -4,6 +4,8 @@
 
 适合知识讲解、生活口播、商品介绍和混合讲述视频。由 AI 助手根据原话规划剪口、关键词、素材与视觉关系，再调用本地工具完成合成。
 
+项目介绍视频可使用[推广口播与配画面建议](docs/推广口播.md)，通过真实剪辑前后对比展示语义剪口、概念可视化与连续衔接。
+
 [下载 v3.0.2](https://github.com/z153921874-lang/agancutskills/archive/refs/tags/v3.0.2.zip) · [技能入口](skills/talking-head-editor/SKILL.md) · [功能与边界](skills/talking-head-editor/references/capabilities.md) · [反馈与需求](https://github.com/z153921874-lang/agancutskills/issues)
 
 ## 能做什么
