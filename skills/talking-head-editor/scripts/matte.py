@@ -21,6 +21,7 @@ def main():
     ap.add_argument('--crop',nargs=4,type=int,metavar=('X','Y','W','H'))
     ap.add_argument('--outline',type=int,default=0)
     ap.add_argument('--glow',type=float,default=0)
+    ap.add_argument('--foreground-source',choices=['model','original'],default='model',help='original keeps source RGB and uses RVM only for alpha; inspect edge spill')
     ap.add_argument('--color',default='#FFE36B')
     ap.add_argument('--ffmpeg')
     a=ap.parse_args()
@@ -86,7 +87,7 @@ def main():
                     inputs={'src':frame.transpose(2,0,1)[None], 'downsample_ratio':ratio}
                     inputs.update({f'r{j+1}i':r for j,r in enumerate(rec)})
                     fgr,pha,*rec=session.run(None,inputs)
-                    foreground=fgr[0].transpose(1,2,0).clip(0,1)
+                    foreground=frame if a.foreground_source=='original' else fgr[0].transpose(1,2,0).clip(0,1)
                     alpha=pha[0,0].clip(0,1)
                     if outline or glow:
                         expanded=cv2.dilate(alpha,np.ones((outline*2+1,outline*2+1),np.uint8)) if outline else alpha
@@ -108,7 +109,7 @@ def main():
     cap.release()
     report={'source':str(source),'start':start,'duration':processed/fps,'width':width,'height':height,
             'fps':fps,'crop':[x,y,cw,ch],'scene_resets':resets,'outline':outline,'glow':glow,
-            'audio':'none; retain the base clip audio','status':'experimental, requires visual review',
+            'foreground_source':a.foreground_source,'audio':'none; retain the base clip audio','status':'experimental, requires visual review',
             'limitations':'All humans may be included; no identity isolation; hair, motion and occlusion need inspection.'}
     out.with_suffix('.matte.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(report,ensure_ascii=True))
